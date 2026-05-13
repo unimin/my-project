@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const navItems = ["소통마당", "알림마당", "위원활동", "자료실", "소개"];
+const navItems = ["안내", "소통마당", "알림마당", "위원활동", "자료실", "소개"];
 
 export default function Header() {
   const [activeNav, setActiveNav] = useState("소통마당");
