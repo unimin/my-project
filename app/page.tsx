@@ -8,14 +8,16 @@ import QuickMenu from "./components/QuickMenu";
 import StatsStrip from "./components/StatsStrip";
 import Footer from "./components/Footer";
 
+// 이미지 출처: Wikimedia Commons, CC BY-SA 3.0
+// 본회의장: https://commons.wikimedia.org/wiki/File:Main_conference_room_of_South_korean_national_assembly_building.JPG
+// 의사당 외관: https://commons.wikimedia.org/wiki/File:National_Assembly_Building_of_South_Korea10.JPG
 const featuredItems1 = [
   {
-    title: "북유럽 가구 디자인 무드보드 · 2026 봄 시즌 정리",
-    tag: "디자인",
-    date: "2026.05.06",
-    count: "14개 항목",
-    imgVariant: "var-1" as const,
-    imgLabel: "FEATURED IMAGE — 16:9",
+    title: "국회 본회의장 — 대한민국 입법부의 중심",
+    tag: "국회",
+    date: "2026.05.13",
+    count: "1개 항목",
+    imgUrl: "https://upload.wikimedia.org/wikipedia/commons/9/90/Main_conference_room_of_South_korean_national_assembly_building.JPG",
   },
   {
     title: "타이포그래피 레퍼런스 — 서체 선택 가이드",
@@ -29,12 +31,11 @@ const featuredItems1 = [
 
 const featuredItems2 = [
   {
-    title: "연말 정리 — 2026년에 읽은 책과 메모",
-    tag: "독서",
-    date: "2026.05.04",
-    count: "32개 항목",
-    imgVariant: "var-2" as const,
-    imgLabel: "SECONDARY IMAGE — 16:9",
+    title: "국회의사당 — 여의도 대한민국 입법부 청사",
+    tag: "국회",
+    date: "2026.05.13",
+    count: "1개 항목",
+    imgUrl: "https://upload.wikimedia.org/wikipedia/commons/4/4f/National_Assembly_Building_of_South_Korea10.JPG",
   },
   {
     title: "5월 큐레이션 — 놓치면 아쉬운 콘텐츠",

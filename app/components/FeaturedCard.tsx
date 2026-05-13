@@ -7,8 +7,9 @@ interface FeaturedItem {
   tag: string;
   date: string;
   count: string;
-  imgVariant: "var-1" | "var-2";
-  imgLabel: string;
+  imgUrl?: string;
+  imgVariant?: "var-1" | "var-2";
+  imgLabel?: string;
 }
 
 interface FeaturedCardProps {
@@ -75,7 +76,9 @@ export default function FeaturedCard({ title, tabs, items }: FeaturedCardProps) 
       {/* Featured image */}
       <div style={{
         aspectRatio: '16/9',
-        background: stripBg[item.imgVariant],
+        background: item.imgUrl
+          ? `url(${item.imgUrl}) center/cover no-repeat`
+          : stripBg[item.imgVariant ?? "var-1"],
         position: 'relative',
         display: 'flex',
         alignItems: 'center',
@@ -86,7 +89,7 @@ export default function FeaturedCard({ title, tabs, items }: FeaturedCardProps) 
         letterSpacing: '0.12em',
         overflow: 'hidden',
       }}>
-        <span>{item.imgLabel}</span>
+        {!item.imgUrl && <span>{item.imgLabel}</span>}
         <button
           onClick={() => setSlideIndex(i => Math.max(0, i - 1))}
           aria-label="이전"
