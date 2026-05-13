@@ -9,16 +9,32 @@ export default function HeroSearch() {
 
   return (
     <section style={{
-      background: 'var(--navy-50)',
+      position: 'relative',
       padding: '72px 32px 56px',
       borderBottom: '1px solid var(--line)',
+      overflow: 'hidden',
     }}>
-      <div style={{ maxWidth: '980px', margin: '0 auto' }}>
+      {/* 배경 이미지 */}
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        backgroundImage: 'url(https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1600&q=80)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }} />
+      {/* 어두운 오버레이 — 텍스트 가독성 확보 */}
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        background: 'linear-gradient(to bottom, rgba(11,29,58,0.72) 0%, rgba(11,29,58,0.60) 100%)',
+      }} />
+
+      <div style={{ maxWidth: '980px', margin: '0 auto', position: 'relative' }}>
         <div style={{
           textAlign: 'center',
           fontSize: '12px',
           fontWeight: 600,
-          color: 'var(--navy-700)',
+          color: 'rgba(255,255,255,0.75)',
           letterSpacing: '0.16em',
           textTransform: 'uppercase',
           marginBottom: '14px',
@@ -30,7 +46,7 @@ export default function HeroSearch() {
           textAlign: 'center',
           fontSize: '32px',
           fontWeight: 700,
-          color: 'var(--navy-900)',
+          color: '#ffffff',
           letterSpacing: '-0.025em',
           margin: '0 0 8px',
           lineHeight: 1.25,
@@ -39,7 +55,7 @@ export default function HeroSearch() {
         </h1>
         <p style={{
           textAlign: 'center',
-          color: 'var(--ink-700)',
+          color: 'rgba(255,255,255,0.8)',
           fontSize: '15px',
           margin: '0 0 36px',
         }}>
@@ -107,23 +123,25 @@ export default function HeroSearch() {
           {quickTags.map(tag => (
             <a key={tag} href="#" style={{
               fontSize: '12.5px',
-              color: 'var(--ink-700)',
+              color: 'rgba(255,255,255,0.85)',
               padding: '6px 14px',
-              background: '#fff',
-              border: '1px solid var(--line)',
+              background: 'rgba(255,255,255,0.12)',
+              border: '1px solid rgba(255,255,255,0.25)',
               transition: 'all .15s',
               borderRadius: 'var(--radius)',
             }}
             onMouseEnter={e => {
-              e.currentTarget.style.borderColor = 'var(--navy-500)';
-              e.currentTarget.style.color = 'var(--navy-700)';
+              e.currentTarget.style.background = 'rgba(255,255,255,0.22)';
+              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.5)';
+              e.currentTarget.style.color = '#fff';
             }}
             onMouseLeave={e => {
-              e.currentTarget.style.borderColor = 'var(--line)';
-              e.currentTarget.style.color = 'var(--ink-700)';
+              e.currentTarget.style.background = 'rgba(255,255,255,0.12)';
+              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.25)';
+              e.currentTarget.style.color = 'rgba(255,255,255,0.85)';
             }}
             >
-              <span style={{ color: 'var(--navy-500)', marginRight: '6px' }}>#</span>
+              <span style={{ color: 'rgba(255,255,255,0.5)', marginRight: '6px' }}>#</span>
               {tag}
             </a>
           ))}
